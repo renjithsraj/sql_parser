@@ -1,0 +1,1 @@
+ WITH A AS (SELECT `id`,`name`,`age` FROM `users`   ),B AS (SELECT `id`,`name`,`age` FROM `A`  WHERE `age` > 18  ),C AS (SELECT `id`,`name`,`age` FROM `B`  ORDER BY `age` , `name` ASC ),D AS (SELECT `id`,`age`, UPPER(`name`) as `name` FROM `C`   ),E AS (SELECT * FROM `D`   LIMIT 100 0) SELECT * FROM E;
